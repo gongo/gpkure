@@ -39,10 +39,11 @@ __END__
           top: 50%;
           left: 50%;
           margin: -100px 0 0 -400px;
+          text-align: center;
       }
 
       #wrapper > span {
-          font-size: 32px;
+          font-size: 24px;
           font-weight: bold;
       }
   %body
