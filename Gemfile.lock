@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/causes/mock_redis.git
+  revision: 0771f3078f51063021b0932e2810abf84468c6f5
+  specs:
+    mock_redis (0.5.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -7,6 +13,8 @@ GEM
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
+    rack-test (0.6.1)
+      rack (>= 1.0)
     redis (3.0.1)
     shotgun (0.9)
       rack (>= 1.0)
@@ -25,6 +33,8 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  mock_redis!
+  rack-test
   redis
   shotgun
   sinatra

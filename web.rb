@@ -3,7 +3,7 @@
 require 'sinatra'
 require 'haml'
 
-configure do
+configure :production, :development do
   require 'redis'
   uri = URI.parse(ENV["REDISTOGO_URL"])
   REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
@@ -17,10 +17,17 @@ end
 
 post '/' do
   serial = params[:serial]
-  if /^(\d{16})$/ =~ serial
+
+  if validate(serial)
     REDIS.sadd('serial', serial)
     "ok"
+  else
+    "no"
   end
+end
+
+def validate(serial)
+  serial.instance_of?(String) and /^(\d{16})$/ =~ serial
 end
 
 __END__
