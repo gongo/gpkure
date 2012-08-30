@@ -38,6 +38,11 @@ __END__
   %head
     %title Georgia Point Kure
     :css
+      * {
+          background-color: #ffffff;
+          color: #000000;
+      }
+
       #wrapper {
           width: 800px;
           height: 200px;
@@ -49,10 +54,17 @@ __END__
           text-align: center;
       }
 
-      #wrapper > span {
+      span#cmd {
           font-size: 24px;
-          font-weight: bold;
       }
+
+      a#help {
+          text-decoration: underline;
+      }
+
   %body
     %div#wrapper
-      <span>$ curl -d 'serial=/\d{16}/' #{@url}</span>
+      %p
+        %span#cmd$ curl -d 'serial=/\d{16}/' #{@url}
+      %p
+        %a#help(href='https://github.com/gongo/gpkure')Help
