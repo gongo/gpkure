@@ -1,0 +1,23 @@
+* {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#wrapper {
+    width: 800px;
+    height: 200px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -400px;
+    text-align: center;
+}
+
+span#cmd {
+    font-size: 24px;
+}
+
+a#help {
+    text-decoration: underline;
+}

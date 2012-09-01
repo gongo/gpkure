@@ -1,15 +1,7 @@
 # -*- coding: utf-8 -*-
 
-ENV['RACK_ENV'] = 'test'
-
-require './web'
-require 'test/unit'
+require 'helper'
 require 'rack/test'
-
-configure :test do
-  require 'mock_redis'
-  REDIS = MockRedis.new
-end
 
 class GpkureTest < Test::Unit::TestCase
   include Rack::Test::Methods
@@ -32,6 +24,13 @@ class GpkureTest < Test::Unit::TestCase
     get '/', nil, { 'HTTP_HOST' => 'localhost', 'SERVER_PORT' => 8080 }
     assert last_response.ok?
     assert last_response.body.include? '$ curl -d \'serial=/\\d{16}/\' localhost:8080'
+  end
+
+  def test_get_with_mobile_user_agent
+    get '/', nil, { 'HTTP_USER_AGENT' => USER_AGENT_IPHONE4 }
+    assert last_response.ok?
+    assert !(last_response.body.include? '$ curl -d \'serial=/\\d{16}/\' example.org')
+    assert last_response.body.include?('<button')
   end
 
   def test_post
