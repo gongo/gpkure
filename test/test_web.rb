@@ -18,6 +18,7 @@ class GpkureTest < Test::Unit::TestCase
     get '/'
     assert last_response.ok?
     assert last_response.body.include? '$ curl -d \'serial=/\\d{16}/\' example.org'
+    assert last_response.body.include? 'Stock 0'
   end
 
   def test_get_with_port_not_80
@@ -40,6 +41,10 @@ class GpkureTest < Test::Unit::TestCase
     assert_equal 'ok', post_body('serial' => '3333333333333333')
 
     assert_equal 3, REDIS.scard('serial')
+
+    get '/'
+    assert last_response.ok?
+    assert last_response.body.include? 'Stock 3'
   end
 
   def test_post_with_invalid_params

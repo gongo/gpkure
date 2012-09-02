@@ -48,7 +48,9 @@ __END__
   %body
     %div#wrapper
       %p
-        %span#cmd$ curl -d 'serial=/\d{16}/' #{@url}
+        %span#cmd $ curl -d 'serial=/\d{16}/' #{@url}
+      %p
+        %span#stock Stock #{@count}
       %p
         %a#help(href='https://github.com/gongo/gpkure')Help
 
