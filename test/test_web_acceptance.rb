@@ -1,3 +1,4 @@
+require 'helper'
 require 'capybara'
 require 'capybara/dsl'
 require 'capybara/webkit'

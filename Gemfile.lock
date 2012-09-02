@@ -52,6 +52,7 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
+    rake (0.9.2.2)
     redis (3.0.1)
     rubyzip (0.9.9)
     selenium-webdriver (2.25.0)
@@ -84,6 +85,7 @@ DEPENDENCIES
   mock_redis!
   pry-debugger
   rack-test
+  rake
   redis
   shotgun
   sinatra

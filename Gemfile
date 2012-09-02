@@ -11,6 +11,7 @@ group :development do
 end
 
 group :test do
+  gem 'rake'
   gem 'rack-test'
   gem 'mock_redis', :git => "git://github.com/causes/mock_redis.git"
   gem 'capybara'
