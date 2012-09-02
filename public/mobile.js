@@ -13,6 +13,7 @@ $(document).ready(function(){
             noty({
                 text: 'invalid...',
                 type: 'warning',
+                dismissQueue: true,
                 layout: 'bottom',
                 timeout: 5000
             });
@@ -26,6 +27,7 @@ $(document).ready(function(){
             function(data) {
                 if (data === 'ok') {
                     GpkureNotification.success();
+                    $('#serial').val("");
                 } else {
                     GpkureNotification.failure();
                 }

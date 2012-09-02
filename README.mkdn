@@ -14,6 +14,17 @@
     $ curl -d 'serial=aaaa gpkure.herokuapp.com
     no
 
+## 僕がジョージアポイントを溜める方法
+
+1. iPhone で http://gpkure.herokuapp.com/ にアクセス
+
+    <img src="https://dl.dropbox.com/u/2532139/github-gpkure/mobile_top.png" width="240px" />
+
+2. ジョージアポイント番号を入力し、「Gift」をクリック
+
+    <img src="https://dl.dropbox.com/u/2532139/github-gpkure/mobile_success.png" width="240p" />
+    <img src="https://dl.dropbox.com/u/2532139/github-gpkure/mobile_failure.png" width="240p" />
+
 ## License
 
 See LICENSE for details.
